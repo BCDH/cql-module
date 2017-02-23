@@ -46,12 +46,23 @@
     </scm>
 
     <properties>
+        <cql.module.namespace>http://humanistika.org/ns/exist/module/cql</cql.module.namespace>
+
         <corpusql-parser.version>1.0</corpusql-parser.version>
         <antlr.version>4.5.3</antlr.version>
         <exist.version>3.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <java-package-name>org.humanistika.exist.module.cqlmodule</java-package-name>
+        <java-package-main-class-name>CQLModule</java-package-main-class-name>
+        <java-lib-version>${project.version}</java-lib-version>
+        <module-prefix>${java-package-name}</module-prefix>
+        <package-title>${project.name}</package-title>
+        <package-name>${cql.module.namespace}</package-name>
+        <package-abbrev>${project.artifactId}</package-abbrev>
+        <package-final-name>${project.artifactId}-${project.version}</package-final-name>
     </properties>
 
     <dependencies>
@@ -108,6 +119,7 @@
                         <exclude>**/LICENSE</exclude>
                         <exclude>src/main/resources/**</exclude>
                         <exclude>src/test/resources/**</exclude>
+                        <exclude>xar-assembly.xml</exclude>
                     </excludes>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
@@ -171,10 +183,19 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <!-- unfortunately this is needed by kuberam-expath-plugin to successfully
+                            generate its components.xml -->
+                            <mainClass>${java-package-name}.${java-package-main-class-name}</mainClass>
+                            <packageName>${java-package-name}</packageName>
+
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                         <manifestEntries>
+                            <!-- unfortunately this is needed by kuberam-expath-plugin to successfully
+                            generate its components.xml -->
+                            <ModuleNamespace>${cql.module.namespace}</ModuleNamespace>
+
                             <Build-Tag>${build-tag}</Build-Tag>
                             <Git-Commit>${build-commit}</Git-Commit>
                             <Git-Commit-Abbrev>${build-commit-abbrev}</Git-Commit-Abbrev>
@@ -187,6 +208,24 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>ro.kuberam.maven.plugins</groupId>
+                <artifactId>kuberam-expath-plugin</artifactId>
+                <version>0.4.8</version>
+                <executions>
+                    <execution>
+                        <id>create-xar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>make-xar</goal>
+                        </goals>
+                        <configuration>
+                            <descriptor>xar-assembly.xml</descriptor>
+                            <finalName>${package-final-name}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

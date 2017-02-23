@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
+    spec="1.0">
+    <title>${package-title}</title>
+    <author id="bcdh">Belgrade Center for Digital Humanities</author>
+    <website>${project.url}</website>
+    <license>GNU General Public License, version 1</license>
+    <copyright>true</copyright>
+    <type>library</type>
+    <status>stable</status>
+    <tag>${project.artifactId}</tag>
+    <tag>library</tag>
+    <tag>versioning</tag>
+    <category id="libs">Libraries</category>
+    <category id="exist">eXist extensions</category>
+    <dependency processor="http://exist-db.org" semver-min="3.0.0" />
+    <dependencySets>
+        <dependencySet>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.artifactId}</artifactId>
+            <version>${project.version}</version>
+        </dependencySet>
+        <dependencySet>
+            <groupId>com.evolvedbinary.cql</groupId>
+            <artifactId>corpusql-parser</artifactId>
+            <version>${corpusql-parser.version}</version>
+        </dependencySet>
+        <dependencySet>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr.version}</version>
+        </dependencySet>
+    </dependencySets>
+</package>

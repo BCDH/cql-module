@@ -14,7 +14,18 @@ Requirements: Java 8, Maven 3.
 3. `mvn package`
 
 
-## Installing into eXist-db
+## Installation into eXist-db
+You can install the module into eXist-db in either one of two ways:
+1. As an EXPath Package (.xar file)
+2. Directly as a XQuery Java Extension Module (.jar file)
+
+### EXPath Package Installation into eXist-db (.xar)
+1. If you have compiled yourself (see above), you can take the `cql-module/target/cql-module-1.1-SNAPSHOT.xar` file and upload it via eXist's EXPath Package Manager app in its Dashboard
+
+2. Otherwise, the latest release version will also be available from the eXist's EXPath Package Manager app in its Dashboard
+
+
+### Direct Installation into eXist-db (.jar)
 1. If you have compiled yourself (see above), copy `cql-module/target/cql-module-1.1-SNAPSHOT-exist.jar` to `$EXIST_HOME/lib/user`, or download `cql-module-1.1-exist.jar` from Maven Central to `$EXIST_HOME/lib/user`
 
 2. Edit `$EXIST_HOME/conf.xml` and add the following to the `<builtin-modules>`:
