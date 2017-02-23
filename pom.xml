@@ -12,7 +12,7 @@
 
     <groupId>org.humanistika.exist.module</groupId>
     <artifactId>cql-module</artifactId>
-    <version>1.2.1</version>
+    <version>1.3-SNAPSHOT</version>
 
     <name>CQL Module</name>
     <description>A Corpus Query Language module for eXist</description>
