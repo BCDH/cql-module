@@ -4,7 +4,7 @@
     <title>${package-title}</title>
     <author id="bcdh">Belgrade Center for Digital Humanities</author>
     <website>${project.url}</website>
-    <license>GNU General Public License, version 1</license>
+    <license>GNU General Public License, version 2</license>
     <copyright>true</copyright>
     <type>library</type>
     <status>stable</status>
