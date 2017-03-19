@@ -120,6 +120,7 @@
                         <exclude>src/main/resources/**</exclude>
                         <exclude>src/test/resources/**</exclude>
                         <exclude>xar-assembly.xml</exclude>
+			<exclude>apache-maven-*/**</exclude>
                     </excludes>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
