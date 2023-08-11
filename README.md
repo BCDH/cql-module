@@ -1,5 +1,5 @@
 # Corpus Query Language module for eXist-db
-[![Build Status](https://travis-ci.org/BCDH/cql-module.png?branch=master)](https://travis-ci.org/BCDH/cql-module) [![Java 8+](https://img.shields.io/badge/java-8+-blue.svg)](http://java.oracle.com) [![License](https://img.shields.io/badge/license-GPL%202-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Download](https://img.shields.io/badge/download-version%201.2.1-ff69b4.svg)](http://search.maven.org/remotecontent?filepath=org/humanistika/exist/module/cql-module/1.2.1/cql-module-1.2.1-exist.jar)
+![Build Status](https://github.com/BCDH/cql-module/actions/workflows/ci.yml/badge.svg) [![Java 8+](https://img.shields.io/badge/java-8+-blue.svg)](http://java.oracle.com) [![License](https://img.shields.io/badge/license-GPL%202-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Download](https://img.shields.io/badge/download-version%201.2.1-ff69b4.svg)](http://search.maven.org/remotecontent?filepath=org/humanistika/exist/module/cql-module/1.2.1/cql-module-1.2.1-exist.jar)
 
 This is an XQuery Function Extension Module for eXist-db. The module provides a CQL (Corpus Query Language) to XML parser based on [exquery/corpusql-parser](https://github.com/exquery/corpusql-parser).
 
