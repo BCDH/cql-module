@@ -26,21 +26,31 @@ You can install the module into eXist-db in either one of two ways:
 
 
 ### Direct Installation into eXist-db (.jar)
-1. If you have compiled yourself (see above), copy `cql-module/target/cql-module-1.3-SNAPSHOT-exist.jar` to `$EXIST_HOME/lib/user`, or download `cql-module-1.2.1-exist.jar` from Maven Central to `$EXIST_HOME/lib/user`
+1. If you have compiled yourself (see above), copy `cql-module/target/cql-module-1.3-SNAPSHOT-exist.jar` to `$EXIST_HOME/lib`, or download `cql-module-1.2.1-exist.jar` from Maven Central to `$EXIST_HOME/lib`
 
 2. Edit `$EXIST_HOME/conf.xml` and add the following to the `<builtin-modules>`:
 
     ```xml
     <module uri="http://humanistika.org/ns/exist/module/cql" class="org.humanistika.exist.module.cqlmodule.CQLModule"/>
     ```
+3. Edit `$EXIST_HOME/conf.xml` and add the following to the `<dependencies>`:
 
-3. Restart eXist-db
+```xml
+      <dependency>
+        <groupId>org.raskovnic</groupId>
+        <artifactId>cql-module</artifactId>
+        <version>1.3-SNAPSHOT</version> <!-- modify to the version you are using -->
+        <relativePath>cql-module-1.3-SNAPSHOT-exist.jar</relativePath> <!-- this should reflect the exact filename in lib folder -->
+      </dependency>
+```
+
+4. Restart eXist-db
 
 ## Usage
 The module exports a single function for use in your XQuery(s), for example:
 
 ```xquery
-xquery version "1.0";
+xquery version "3.1";
 
 import module namespace cql = "http://humanistika.org/ns/exist/module/cql";
 
