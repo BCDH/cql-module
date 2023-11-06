@@ -91,7 +91,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -137,7 +137,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
+                <version>3.6.1</version>
                 <executions>
                     <execution>
                         <id>analyze</id>
@@ -166,7 +166,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.11.0</version>
                 <configuration>
                     <source>${project.build.source}</source>
                     <target>${project.build.target}</target>
@@ -180,7 +180,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -213,7 +213,7 @@
             <plugin>
                 <groupId>ro.kuberam.maven.plugins</groupId>
                 <artifactId>kuberam-expath-plugin</artifactId>
-                <version>0.5.0</version>
+                <version>0.6.3</version>
                 <executions>
                     <execution>
                         <id>create-xar</id>
@@ -231,7 +231,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4.3</version>
+                <version>3.5.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
