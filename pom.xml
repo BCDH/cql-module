@@ -48,8 +48,8 @@
     <properties>
         <cql.module.namespace>http://humanistika.org/ns/exist/module/cql</cql.module.namespace>
 
-        <corpusql-parser.version>1.0</corpusql-parser.version>
-        <antlr.version>4.5.3</antlr.version>
+        <corpusql-parser.version>1.1.0</corpusql-parser.version>
+        <antlr.version>4.9.2</antlr.version>
         <exist.version>6.0.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
