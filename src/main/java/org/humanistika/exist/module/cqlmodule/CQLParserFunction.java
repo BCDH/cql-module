@@ -1,4 +1,4 @@
-/**
+/*
  * CQL Module
  * A Corpus Query Language module for eXist
  * Copyright (C) 2016 Belgrade Center for Digital Humanities
@@ -21,7 +21,8 @@ package org.humanistika.exist.module.cqlmodule;
 
 import com.evolvedbinary.cql.parser.CorpusQLLexer;
 import com.evolvedbinary.cql.parser.CorpusQLParser;
-import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.exist.dom.QName;
@@ -37,7 +38,7 @@ public class CQLParserFunction extends BasicFunction {
             new SequenceType[] {
                     new FunctionParameterSequenceType("cql", Type.STRING, Cardinality.EXACTLY_ONE, "The Corpus Query Language"),
             },
-            new FunctionReturnSequenceType(Type.DOCUMENT, Cardinality.ONE, "The XML AST of the Corpus Query Language")
+            new FunctionReturnSequenceType(Type.DOCUMENT, Cardinality.EXACTLY_ONE, "The XML AST of the Corpus Query Language")
     );
 
     public CQLParserFunction(final XQueryContext context, final FunctionSignature signature) {
@@ -46,9 +47,9 @@ public class CQLParserFunction extends BasicFunction {
 
     @Override
     public Sequence eval(final Sequence[] args, final Sequence contextSequence) throws XPathException {
-        final ANTLRInputStream is = new ANTLRInputStream(args[0].getStringValue());
+        final CodePointCharStream charStream = CharStreams.fromString(args[0].getStringValue());
 
-        final CorpusQLLexer lexer = new CorpusQLLexer(is);
+        final CorpusQLLexer lexer = new CorpusQLLexer(charStream);
         final CommonTokenStream tokens = new CommonTokenStream(lexer);
         final CorpusQLParser parser = new CorpusQLParser(tokens);
 
@@ -68,9 +69,9 @@ public class CQLParserFunction extends BasicFunction {
     //TODO(AR) remove testing
     public final static void main(final String[] args) {
 
-        final ANTLRInputStream is = new ANTLRInputStream("[lemma = \"value\" & x = \"y\"]");
+        final CodePointCharStream charStream = CharStreams.fromString("[lemma = \"value\" & x = \"y\"]");
 
-        final CorpusQLLexer lexer = new CorpusQLLexer(is);
+        final CorpusQLLexer lexer = new CorpusQLLexer(charStream);
         final CommonTokenStream tokens = new CommonTokenStream(lexer);
         final CorpusQLParser parser = new CorpusQLParser(tokens);
 

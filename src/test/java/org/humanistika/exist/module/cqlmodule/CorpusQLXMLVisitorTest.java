@@ -1,4 +1,4 @@
-/**
+/*
  * CQL Module
  * A Corpus Query Language module for eXist
  * Copyright (C) 2016 Belgrade Center for Digital Humanities
@@ -21,7 +21,8 @@ package org.humanistika.exist.module.cqlmodule;
 
 import com.evolvedbinary.cql.parser.CorpusQLLexer;
 import com.evolvedbinary.cql.parser.CorpusQLParser;
-import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.exist.dom.memtree.DocumentImpl;
@@ -142,16 +143,16 @@ public class CorpusQLXMLVisitorTest {
     }
 
     private static DocumentImpl parse(final String cql, final boolean showAstTree) {
-        final ANTLRInputStream is = new ANTLRInputStream(cql);
+        final CodePointCharStream charStream = CharStreams.fromString(cql);
 
-        final CorpusQLLexer lexer = new CorpusQLLexer(is);
+        final CorpusQLLexer lexer = new CorpusQLLexer(charStream);
         final CommonTokenStream tokens = new CommonTokenStream(lexer);
         final CorpusQLParser parser = new CorpusQLParser(tokens);
 
         final ParseTree tree = parser.query();
 
         // useful for debugging
-        if(showAstTree) {
+        if (showAstTree) {
             System.out.println(tree.toStringTree(parser));
         }
 

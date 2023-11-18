@@ -48,9 +48,9 @@
     <properties>
         <cql.module.namespace>http://humanistika.org/ns/exist/module/cql</cql.module.namespace>
 
-        <corpusql-parser.version>1.0</corpusql-parser.version>
-        <antlr.version>4.5.3</antlr.version>
-        <exist.version>3.0</exist.version>
+        <corpusql-parser.version>1.1.0</corpusql-parser.version>
+        <antlr.version>4.9.2</antlr.version>
+        <exist.version>6.0.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -101,28 +101,32 @@
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>3.0</version>
+                <version>4.3</version>
                 <configuration>
-                    <header>GPL2-template.txt</header>
                     <failIfMissing>true</failIfMissing>
-                    <aggregate>true</aggregate>
                     <strictCheck>true</strictCheck>
-                    <properties>
-                        <organization>${project.organization.name}</organization>
-                    </properties>
                     <mapping>
                         <form>XML_STYLE</form>
                     </mapping>
-                    <excludes>
-                        <exclude>**/pom.xml</exclude>
-                        <exclude>**/README.md</exclude>
-                        <exclude>**/LICENSE</exclude>
-                        <exclude>src/main/resources/**</exclude>
-                        <exclude>src/test/resources/**</exclude>
-                        <exclude>xar-assembly.xml</exclude>
-			<exclude>apache-maven-*/**</exclude>
-                    </excludes>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <licenseSets>
+                        <licenseSet>
+                            <header>GPL2-template.txt</header>
+                            <properties>
+                                <organization>${project.organization.name}</organization>
+                            </properties>
+                            <excludes>
+                                <exclude>**/pom.xml</exclude>
+                                <exclude>**/README.md</exclude>
+                                <exclude>**/LICENSE</exclude>
+                                <exclude>src/main/resources/**</exclude>
+                                <exclude>src/test/resources/**</exclude>
+                                <exclude>xar-assembly.xml</exclude>
+                                <exclude>dependency-reduced-pom.xml</exclude>
+                                <exclude>.github/**</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
                 </configuration>
                 <executions>
                     <execution>
@@ -262,13 +266,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>exist</id>
-            <url>https://raw.github.com/eXist-db/mvn-repo/master/</url>
-        </repository>
-    </repositories>
 
     <pluginRepositories>
         <pluginRepository>
