@@ -2,7 +2,7 @@
 [![Build Status](https://github.com/BCDH/cql-module/actions/workflows/ci.yml/badge.svg)](https://github.com/BCDH/cql-module/actions/workflows/ci.yml)
 [![Java 8+](https://img.shields.io/badge/java-8+-blue.svg)](http://java.oracle.com)
 [![License](https://img.shields.io/badge/license-GPL%202-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Download](https://img.shields.io/badge/download-version%201.2.1-ff69b4.svg)](http://search.maven.org/remotecontent?filepath=org/humanistika/exist/module/cql-module/1.2.1/cql-module-1.2.1-exist.jar)
+[![Download](https://img.shields.io/badge/download-version%201.3.0-ff69b4.svg)](http://search.maven.org/remotecontent?filepath=org/humanistika/exist/module/cql-module/1.3.0/cql-module-1.3.0-exist.jar)
 
 This is an XQuery Function Extension Module for eXist-db. The module provides a CQL (Corpus Query Language) to XML parser based on [exquery/corpusql-parser](https://github.com/exquery/corpusql-parser).
 
@@ -23,27 +23,27 @@ You can install the module into eXist-db in either one of two ways:
 2. Directly as a XQuery Java Extension Module (.jar file)
 
 ### EXPath Package Installation into eXist-db (.xar)
-1. If you have compiled yourself (see above), you can take the `cql-module/target/cql-module-1.3.0-SNAPSHOT.xar` file and upload it via eXist's EXPath Package Manager app in its Dashboard
+1. If you have compiled yourself (see above), you can take the `cql-module/target/cql-module-1.4.0-SNAPSHOT.xar` file and upload it via eXist's EXPath Package Manager app in its Dashboard
 
 2. Otherwise, the latest release version will also be available from the eXist's EXPath Package Manager app in its Dashboard
 
 
 ### Direct Installation into eXist-db (.jar)
-1. If you have compiled yourself (see above), copy `cql-module/target/cql-module-1.3.0-SNAPSHOT-exist.jar` to `$EXIST_HOME/lib`, or download `cql-module-1.2.1-exist.jar` from Maven Central to `$EXIST_HOME/lib`
+1. If you have compiled yourself (see above), copy `cql-module/target/cql-module-1.4.0-SNAPSHOT-exist.jar` to `$EXIST_HOME/lib`, or download `cql-module-1.3.0-exist.jar` from Maven Central to `$EXIST_HOME/lib`
 
-2. Edit `$EXIST_HOME/conf.xml` and add the following to the `<builtin-modules>`:
+2. Edit `$EXIST_HOME/etc/conf.xml` and add the following to the `<builtin-modules>`:
 
     ```xml
     <module uri="http://humanistika.org/ns/exist/module/cql" class="org.humanistika.exist.module.cqlmodule.CQLModule"/>
     ```
-3. Edit `$EXIST_HOME/conf.xml` and add the following to the `<dependencies>`:
+3. Edit `$EXIST_HOME/etc/startup.xml` and add the following to the `<dependencies>`:
 
 ```xml
       <dependency>
-        <groupId>org.raskovnic</groupId>
+        <groupId>org.humanistika.exist.module</groupId>
         <artifactId>cql-module</artifactId>
-        <version>1.3.0-SNAPSHOT</version> <!-- modify to the version you are using -->
-        <relativePath>cql-module-1.3.0-SNAPSHOT-exist.jar</relativePath> <!-- this should reflect the exact filename in lib folder -->
+        <version>1.4.0-SNAPSHOT</version> <!-- modify to the version you are using -->
+        <relativePath>cql-module-1.4.0-SNAPSHOT-exist.jar</relativePath> <!-- this should reflect the exact filename in lib folder -->
       </dependency>
 ```
 
