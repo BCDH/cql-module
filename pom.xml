@@ -50,7 +50,7 @@
 
         <corpusql-parser.version>1.0</corpusql-parser.version>
         <antlr.version>4.5.3</antlr.version>
-        <exist.version>3.0</exist.version>
+        <exist.version>6.0.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -266,13 +266,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>exist</id>
-            <url>https://raw.github.com/eXist-db/mvn-repo/master/</url>
-        </repository>
-    </repositories>
 
     <pluginRepositories>
         <pluginRepository>

@@ -37,7 +37,7 @@ public class CQLParserFunction extends BasicFunction {
             new SequenceType[] {
                     new FunctionParameterSequenceType("cql", Type.STRING, Cardinality.EXACTLY_ONE, "The Corpus Query Language"),
             },
-            new FunctionReturnSequenceType(Type.DOCUMENT, Cardinality.ONE, "The XML AST of the Corpus Query Language")
+            new FunctionReturnSequenceType(Type.DOCUMENT, Cardinality.EXACTLY_ONE, "The XML AST of the Corpus Query Language")
     );
 
     public CQLParserFunction(final XQueryContext context, final FunctionSignature signature) {
