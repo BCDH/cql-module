@@ -101,28 +101,32 @@
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>3.0</version>
+                <version>4.3</version>
                 <configuration>
-                    <header>GPL2-template.txt</header>
                     <failIfMissing>true</failIfMissing>
-                    <aggregate>true</aggregate>
                     <strictCheck>true</strictCheck>
-                    <properties>
-                        <organization>${project.organization.name}</organization>
-                    </properties>
                     <mapping>
                         <form>XML_STYLE</form>
                     </mapping>
-                    <excludes>
-                        <exclude>**/pom.xml</exclude>
-                        <exclude>**/README.md</exclude>
-                        <exclude>**/LICENSE</exclude>
-                        <exclude>src/main/resources/**</exclude>
-                        <exclude>src/test/resources/**</exclude>
-                        <exclude>xar-assembly.xml</exclude>
-			<exclude>apache-maven-*/**</exclude>
-                    </excludes>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <licenseSets>
+                        <licenseSet>
+                            <header>GPL2-template.txt</header>
+                            <properties>
+                                <organization>${project.organization.name}</organization>
+                            </properties>
+                            <excludes>
+                                <exclude>**/pom.xml</exclude>
+                                <exclude>**/README.md</exclude>
+                                <exclude>**/LICENSE</exclude>
+                                <exclude>src/main/resources/**</exclude>
+                                <exclude>src/test/resources/**</exclude>
+                                <exclude>xar-assembly.xml</exclude>
+                                <exclude>dependency-reduced-pom.xml</exclude>
+                                <exclude>.github/**</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
                 </configuration>
                 <executions>
                     <execution>

@@ -1,4 +1,4 @@
-/**
+/*
  * CQL Module
  * A Corpus Query Language module for eXist
  * Copyright (C) 2016 Belgrade Center for Digital Humanities
