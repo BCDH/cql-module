@@ -6,13 +6,19 @@
     <website>${project.url}</website>
     <license>GNU General Public License, version 2</license>
     <copyright>true</copyright>
+
     <type>library</type>
+
     <status>stable</status>
+
     <tag>${project.artifactId}</tag>
     <tag>library</tag>
     <category id="libs">Libraries</category>
+
     <dependency processor="http://elemental.xyz" semver-min="6.4.0" />
     <dependency processor="http://exist-db.org" semver-min="6.3.0" />
+
+    <!-- include the XQuery Library Module written in Java (JAR output) from this project -->
     <dependencySets>
         <dependencySet>
             <groupId>${project.groupId}</groupId>
@@ -30,4 +36,13 @@
             <version>${antlr.version}</version>
         </dependencySet>
     </dependencySets>
+
+    <!-- register the Java module -->
+    <components>
+        <resource>
+            <public-uri>${cql.module.namespace}</public-uri>
+            <file>urn:java:class:${java-package-name}.${java-package-main-class-name}</file>
+        </resource>
+    </components>
+
 </package>
