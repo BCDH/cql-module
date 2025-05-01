@@ -14,7 +14,7 @@ You can install the module into Elemental or eXist-db in either one of two ways:
 
 ### Easy Option - EXPath Package Installation into eXist-db (.xar)
 1. Download the latest XAR file from the releases here: https://github.com/BCDH/cql-module/releases/
-   * or if you have [compiled](#compiling) the code yourself you can find the `cql-module-1.5.0-SNAPSHOT.xar` file in the `target` subfolder.
+   * or if you have [compiled](#compiling) the code yourself you can find the `cql-module-1.6.0-SNAPSHOT.xar` file in the `target` subfolder.
 
 2. You can take the .xar file and upload it via Elemental or eXist-db's EXPath Package Manager app from its Dashboard
 
@@ -22,7 +22,7 @@ You can install the module into Elemental or eXist-db in either one of two ways:
 
 ### Advanced Option - Direct Installation into eXist-db (.jar)
 1. Download the latest Jar file from the releases here: https://github.com/BCDH/cql-module/releases/
-   * or if you have [compiled](#compiling) the code yourself you can find the `cql-module-1.5.0-SNAPSHOT-exist.jar` file in the `target` subfolder.
+   * or if you have [compiled](#compiling) the code yourself you can find the `cql-module-1.6.0-SNAPSHOT-exist.jar` file in the `target` subfolder.
 
 2. Copy the .jar file to either `$ELEMENTAL_HOME/lib` (or substitute `$EXIST_HOME` instead of `$ELEMENTAL_HOME` for eXist-db).
 
@@ -37,8 +37,8 @@ You can install the module into Elemental or eXist-db in either one of two ways:
          <dependency>
            <groupId>org.humanistika.exist.module</groupId>
            <artifactId>cql-module</artifactId>
-           <version>1.5.0-SNAPSHOT</version> <!-- NOTE: Modify this to the version you are using -->
-           <relativePath>cql-module-1.5.0-SNAPSHOT-exist.jar</relativePath> <!-- NOTE: this should reflect the exact filename in lib folder that you copied earlier -->
+           <version>1.6.0-SNAPSHOT</version> <!-- NOTE: Modify this to the version you are using -->
+           <relativePath>cql-module-1.6.0-SNAPSHOT-exist.jar</relativePath> <!-- NOTE: this should reflect the exact filename in lib folder that you copied earlier -->
          </dependency>
    ```
 
