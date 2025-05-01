@@ -44,7 +44,7 @@
         <corpusql-parser.version>1.2.0</corpusql-parser.version>
         <!-- NOTE(AR) Antlr 4.9.3 is the last version in the 4.x.x line that supports Java 8 -->
         <antlr.version>4.9.3</antlr.version>
-        <exist.version>6.0.0</exist.version>
+        <exist.version>6.3.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
