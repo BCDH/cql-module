@@ -12,7 +12,7 @@
     <tag>library</tag>
     <tag>versioning</tag>
     <category id="libs">Libraries</category>
-    <category id="exist">eXist extensions</category>
+    <dependency processor="http://elemental.xyz" semver-min="6.4.0" />
     <dependency processor="http://exist-db.org" semver-min="6.3.0" />
     <dependencySets>
         <dependencySet>
