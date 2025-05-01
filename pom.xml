@@ -42,7 +42,8 @@
         <cql.module.namespace>http://humanistika.org/ns/exist/module/cql</cql.module.namespace>
 
         <corpusql-parser.version>1.1.0</corpusql-parser.version>
-        <antlr.version>4.9.2</antlr.version>
+        <!-- NOTE(AR) Antlr 4.9.3 is the last version in the 4.x.x line that supports Java 8 -->
+        <antlr.version>4.9.3</antlr.version>
         <exist.version>6.0.0</exist.version>
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
